@@ -1,6 +1,6 @@
 # Finance
 
-Note: This project previously used Yahoo finance to get the data. But since last few months Yahoo has discontinued it's service.
+**Note:** This project previously used Yahoo finance to get the data. But since last few months Yahoo has discontinued it's service.
 The project now uses Alphavantage. But unlike Yahoo it does not return company's name. So the stock symbol itself is used as a placeholder for company's name.
 
 Personalized Version of CS50's PSET. (<https://docs.cs50.net/2018/x/psets/7/finance/finance.html>)

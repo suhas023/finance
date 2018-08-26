@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wishlist
+{% endblock %}
+
+{% block main %}
+
+	<div class="wishlist-heading">
+		<h2>Wishlist.</h2>
+	</div>
+
+	<form action="{{ url_for('wishlist') }}" method="post">
+        <fieldset>
+            <div class="form-group" >
+                <input autocomplete="off" autofocus class="form-control" name="symbols" placeholder="sym1,sym2,sym3..." type="text"/>
+            
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+
+    {% if filled %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+
+        
+
+        <tbody>
+            
+            {% for symbol in rows %}
+            
+                <tr>
+                    <td>{{symbol.symbol}}</td>
+                    <td>{{symbol.name}}</td>
+                    <td>{{symbol.price|usd}}</td>
+                </tr>
+            {%endfor%}
+               
+        </tbody>
+    </table>
+
+    {% else %}
+    	<div class="jumbotron"><h3>It's Lonley Here :(</h3></div>
+
+    {% endif %}
+
+{% endblock %}

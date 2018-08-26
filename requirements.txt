@@ -1,0 +1,15 @@
+click==6.7
+cs50==2.4.0
+feedparser==5.2.1
+Flask==0.12.2
+Flask-JSGlue==0.3.1
+Flask-Session==0.3.1
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+passlib==1.7.1
+pkg-resources==0.0.0
+SQLAlchemy==1.2.6
+sqlparse==0.2.4
+termcolor==1.1.0
+Werkzeug==0.14.1

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Headlines
+{% endblock %}
+
+{% block main %}
+
+
+	<div class ="container">
+		<div class="jumbotron">
+			
+			<h1>Headlines</h1>
+
+
+		</div>
+
+	<div class="articles">
+	{% for entries in feed %}
+		<a href="{{entries.link}}"><p class="text-left title">{{entries.title}}</p></a>
+		<p class="text-left published"><small>{{entries["published"]}}</small></p>
+		{{entries.description | safe}}
+		<hr />
+
+	{% endfor %}
+	</div>
+	</div>
+	
+
+
+
+
+{% endblock %}

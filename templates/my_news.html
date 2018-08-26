@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My News
+{% endblock %}
+
+{% block main %}
+
+	
+	<form action="{{ url_for('my_news') }}" method="post">
+        <fieldset>
+            <div class="form-group " >
+                <input autocomplete="off" autofocus class="form-control" name="symbols" placeholder="sym1,sym2,sym3..." type="text"/>
+            
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <hr />
+
+    <div class="articles  ">
+    
+    {% if filled %}
+    	{% for symbol,entries in feed.items() %}
+    		<div class="bg-symbol"><h2 class="symbol" >#{{symbol}}</h2>
+    		{% for sym in feed %}
+    			<a href="#{{sym}}"><p class="psudo-nav">#{{sym}}</p></a>
+    		{% endfor %}
+    		</div>
+    		<div id={{symbol}}></div>
+    		{% for entriesX in entries %}
+			<a href="{{entriesX.link}}"><p class="text-left title" >{{entriesX.title | safe}}</p></a>
+			<p class="text-left published"><small>{{entriesX["published"] | safe}}</small></p>
+			<p class="text-left description">{{entriesX.description | safe}}</p>
+			<hr />
+			{% endfor %}
+
+
+    	{% endfor %}
+    
+
+    {% else %}
+    <div class="jumbotron">
+    <h2>It's lonley here...</h2>
+    </div>
+    {% endif %}
+	
+	</div>
+
+
+
+{% endblock %}

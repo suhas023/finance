@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    INDEX
+{% endblock %}
+
+{% block main %}
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+            {%for rowX in rows%}
+                <tr>
+                    <td>{{rowX.sym}}</td>
+                    <td>{{rowX.shares}}</td>
+                    <td>{{rowX.price|usd}}</td>
+                    <td>{{rowX.Transacted}}</td>
+
+                </tr>
+            {%endfor%}
+
+        </tbody>
+    </table>
+
+{% endblock %}

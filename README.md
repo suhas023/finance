@@ -26,5 +26,9 @@ A web app via which you can manage portfolios of stocks. Not only will this tool
 
 # Screenshots
 ![sample shot](/screenshots/finance1.png?raw=true)
+
+
 ![sample shot](/screenshots/finance2.png?raw=true)
+
+
 ![sample shot](/screenshots/finance3.png?raw=true)
